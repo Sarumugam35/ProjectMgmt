@@ -19,9 +19,10 @@ export class AddtaskService {
 
   saveTask(task) {
     var userBody = JSON.stringify(task);
+alert(JSON.stringify(task));
     var headerOptions = new Headers({ 'Content-Type': 'application/json' });
     var requestOptions = new RequestOptions({ headers: headerOptions });
-    return this._http.post(this.baseUrl, userBody, requestOptions);
+    return this._http.post(this.baseUrl+'/Create', userBody, requestOptions);
   }
 
   getParentTasks(): Observable<ParentTask[]> {

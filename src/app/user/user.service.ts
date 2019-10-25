@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, RequestMethod } from '@angular/http';
-//import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -16,6 +15,7 @@ export class UserService {
   saveUser(user) {
     //debugger;
     var userBody = JSON.stringify(user);
+	alert(JSON.stringify(user));
     var headerOptions = new Headers({ 'Content-Type': 'application/json' });
     var requestOptions = new RequestOptions({ headers: headerOptions });
     return this._http.post(this.baseUrl+'/Create', userBody, requestOptions);
