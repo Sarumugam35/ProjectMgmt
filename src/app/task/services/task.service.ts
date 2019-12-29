@@ -14,7 +14,7 @@ import { ParentTask } from '../model/parent-task';
 
 @Injectable()
 export class AddtaskService {
-  baseUrl: string = 'http://localhost:62634/api/Task';
+  baseUrl: string = 'http://localhost/ProjManagementApi/api/Task';
   constructor(private _http: Http) { }
 
   saveTask(task) {
@@ -27,7 +27,7 @@ alert(JSON.stringify(task));
 
   getParentTasks(): Observable<ParentTask[]> {
 
-    return this._http.get('http://localhost:62634/api/Parent/GetParentTasks')
+    return this._http.get('http://localhost/ProjManagementApi/api/Parent/GetParentTasks')
       .map((data: Response) => {
         return data.json() as ParentTask[];
       }).catch((error: any) => Observable.throw("Error in x service"))

@@ -9,7 +9,7 @@ import { User } from './User';
 
 @Injectable()
 export class UserService {
-  baseUrl: string = 'http://localhost:62634/api/User';
+  baseUrl: string = 'http://localhost/ProjManagementApi/api/User';
   constructor(private _http: Http) { }
 
   saveUser(user) {
